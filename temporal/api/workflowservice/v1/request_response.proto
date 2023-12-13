@@ -1251,6 +1251,25 @@ message UpdateWorkflowExecutionResponse {
     temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;
 }
 
+message UpdateWithStartWorkflowExecutionRequest {
+    string namespace = 1;
+
+    // The request for starting the workflow.
+    temporal.api.workflowservice.v1.StartWorkflowExecutionRequest start_request = 2;
+
+    // Describes when this request should return.
+    // For example, wait for "Accepted" (async update) or "Completed" (sync update).
+    temporal.api.update.v1.WaitPolicy wait_policy = 3;
+
+    // The request information that will be delivered to the Update handler.
+    temporal.api.update.v1.Request update = 4;
+}
+
+message UpdateWithStartWorkflowExecutionResponse {
+    // The Update request's response.
+    UpdateWorkflowExecutionResponse update_response = 1;
+}
+
 message StartBatchOperationRequest {
     // Namespace that contains the batch operation
     string namespace = 1;
