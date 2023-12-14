@@ -564,6 +564,13 @@ service WorkflowService {
         };
     }
 
+    rpc UpdateWithStartWorkflowExecution(UpdateWithStartWorkflowExecutionRequest) returns (UpdateWithStartWorkflowExecutionResponse) {
+        option (google.api.http) = {
+            post: "/api/v1/namespaces/{namespace}/workflows/{update.workflow_execution.workflow_id}/update/{update.request.input.name}"
+            body: "*"
+        };
+    }
+
     // Polls a workflow execution for the outcome of a workflow execution update
     // previously issued through the UpdateWorkflowExecution RPC. The effective
     // timeout on this call will be shorter of the the caller-supplied gRPC

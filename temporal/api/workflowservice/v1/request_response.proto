@@ -25,7 +25,7 @@ syntax = "proto3";
 package temporal.api.workflowservice.v1;
 
 option go_package = "go.temporal.io/api/workflowservice/v1;workflowservice";
-option java_package = "io.temporal.api.workflowservice.v1";
+option java_package = "io.temporal.api_incubator.workflowservice.v1";
 option java_multiple_files = true;
 option java_outer_classname = "RequestResponseProto";
 option ruby_package = "Temporalio::Api::WorkflowService::V1";
@@ -1262,12 +1262,12 @@ message UpdateWithStartWorkflowExecutionRequest {
     temporal.api.update.v1.WaitPolicy wait_policy = 3;
 
     // The request information that will be delivered to the Update handler.
-    temporal.api.update.v1.Request update = 4;
+    temporal.api.workflowservice.v1.UpdateWorkflowExecutionRequest update = 4;
 }
 
 message UpdateWithStartWorkflowExecutionResponse {
     // The Update request's response.
-    UpdateWorkflowExecutionResponse update_response = 1;
+    temporal.api.workflowservice.v1.UpdateWorkflowExecutionResponse update_response = 1;
 }
 
 message StartBatchOperationRequest {
