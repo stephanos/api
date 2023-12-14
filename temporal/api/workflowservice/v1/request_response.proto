@@ -25,7 +25,7 @@ syntax = "proto3";
 package temporal.api.workflowservice.v1;
 
 option go_package = "go.temporal.io/api/workflowservice/v1;workflowservice";
-option java_package = "io.temporal.api_incubator.workflowservice.v1";
+option java_package = "io.temporal.api.workflowservice.v1";
 option java_multiple_files = true;
 option java_outer_classname = "RequestResponseProto";
 option ruby_package = "Temporalio::Api::WorkflowService::V1";
@@ -1251,6 +1251,10 @@ message UpdateWorkflowExecutionResponse {
     temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;
 }
 
+// (-- api-linter: core::0134::request-mask-required=disabled
+//     aip.dev/not-precedent: Update methods should have an `update_mask` field. --)
+// (-- api-linter: core::0134::request-resource-required=disabled
+//     aip.dev/not-precedent: Message "UpdateWithStartWorkflowExecutionRequest" has no "WithStartWorkflowExecution" --)
 message UpdateWithStartWorkflowExecutionRequest {
     string namespace = 1;
 
@@ -1265,6 +1269,8 @@ message UpdateWithStartWorkflowExecutionRequest {
     temporal.api.workflowservice.v1.UpdateWorkflowExecutionRequest update = 4;
 }
 
+// (-- api-linter: core::0134::request-mask-required=disabled
+//     aip.dev/not-precedent: Update methods should have an `update_mask` field. --)
 message UpdateWithStartWorkflowExecutionResponse {
     // The Update request's response.
     temporal.api.workflowservice.v1.UpdateWorkflowExecutionResponse update_response = 1;
