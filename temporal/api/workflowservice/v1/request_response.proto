@@ -1266,7 +1266,7 @@ message UpdateWithStartWorkflowExecutionRequest {
     temporal.api.update.v1.WaitPolicy wait_policy = 3;
 
     // The request information that will be delivered to the Update handler.
-    temporal.api.workflowservice.v1.UpdateWorkflowExecutionRequest update = 4;
+    temporal.api.update.v1.Request update = 4;
 }
 
 // (-- api-linter: core::0134::request-mask-required=disabled
