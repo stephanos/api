@@ -568,7 +568,7 @@ service WorkflowService {
     //     aip.dev/not-precedent: "With" is used to indicate combined operation. --)
     rpc UpdateWithStartWorkflowExecution(UpdateWithStartWorkflowExecutionRequest) returns (UpdateWithStartWorkflowExecutionResponse) {
         option (google.api.http) = {
-            post: "/api/v1/namespaces/{namespace}/workflows/{update.workflow_execution.workflow_id}/update/{update.request.input.name}"
+            post: "/api/v1/namespaces/{namespace}/workflows/{start_request.workflow_id}/update/{update.input.name}"
             body: "*"
         };
     }
