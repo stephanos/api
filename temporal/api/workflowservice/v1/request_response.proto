@@ -1230,6 +1230,9 @@ message UpdateWorkflowExecutionRequest {
 
     // TODO
     temporal.api.workflowservice.v1.StartWorkflowExecutionRequest start_request = 6;
+
+    // TODO
+    temporal.api.enums.v1.StartWorkflowPolicy start_request_policy = 7;
 }
 
 message UpdateWorkflowExecutionResponse {

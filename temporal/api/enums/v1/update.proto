@@ -54,3 +54,10 @@ enum UpdateWorkflowExecutionLifecycleStage {
     // on a worker and has either been rejected or returned a value or an error.
     UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_COMPLETED = 3;
 }
+
+// TODO
+enum StartWorkflowPolicy {
+    START_WORKFLOW_POLICY_UNSPECIFIED = 0;
+    START_WORKFLOW_POLICY_ALWAYS = 1;
+    START_WORKFLOW_POLICY_IF_NOT_RUNNING = 2;
+}
