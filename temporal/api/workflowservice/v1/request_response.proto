@@ -1227,6 +1227,9 @@ message UpdateWorkflowExecutionRequest {
     // The request information that will be delivered all the way down to the
     // workflow execution.
     temporal.api.update.v1.Request request = 5;
+
+    // TODO
+    temporal.api.workflowservice.v1.StartWorkflowExecutionRequest start_request = 6;
 }
 
 message UpdateWorkflowExecutionResponse {
