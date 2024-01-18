@@ -183,6 +183,19 @@ message StartWorkflowExecutionRequest {
     // If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
     // of the delay will be ignored.
     google.protobuf.Duration workflow_start_delay = 20;
+    // UvS TODO: better name?
+    PostStartOperationRequests post_start_operations = 21;
+}
+
+message PostStartOperationRequests {
+        repeated PostStartOperationRequest operations = 1;
+        temporal.api.enums.v1.WorkflowPostStartOperationMode mode = 2;
+}
+
+message PostStartOperationRequest {
+        oneof operation {
+        UpdateWorkflowExecutionRequest update_request = 1;
+    }
 }
 
 message StartWorkflowExecutionResponse {
@@ -191,6 +204,17 @@ message StartWorkflowExecutionResponse {
     // return the first workflow task to be eagerly executed.
     // The caller is expected to have a worker available to process the task.
     PollWorkflowTaskQueueResponse eager_workflow_task = 2;
+        PostStartResultResponses post_start_responses = 3;
+}
+
+message PostStartResultResponses {
+        repeated PostStartResultResponse responses = 1;
+}
+
+message PostStartResultResponse {
+        oneof response {
+        UpdateWorkflowExecutionResponse update_response = 1;
+    }
 }
 
 message GetWorkflowExecutionHistoryRequest {
